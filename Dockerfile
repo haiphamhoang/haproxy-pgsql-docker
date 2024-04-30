@@ -4,7 +4,7 @@ FROM debian:bookworm-slim
 RUN set -eux; apt update; apt install -y python3 python3-pip
 
 # psql client
-RUN set -eux; apt update; apt install -y postgresql-client-16
+RUN set -eux; apt update; apt install -y postgresql-client-15
 
 # runtime dependencies
 RUN set -eux; \
