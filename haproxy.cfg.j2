@@ -39,6 +39,6 @@ listen primary
     maxconn 2048
     option external-check
     external-check command /opt/primary-check.sh
-    default-server init-addr none check inter 2s fall 2 rise 2 slowstart 4000
-{% set pg_nodes_list = pg_nodes.split(';') %}{% for node in pg_nodes_list %}    server pg-{{ loop.index }} {{ node }}
+    default-server resolvers docker init-addr none check inter 2s fall 2 rise 2 slowstart 4000
+{% set pg_nodes_list = pg_nodes.split(';') %}{% for node in pg_nodes_list %}    server {{ node }} {{ node }}
 {% endfor %}
